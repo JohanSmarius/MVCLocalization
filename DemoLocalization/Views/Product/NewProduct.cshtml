@@ -1,18 +1,33 @@
-@model TModel
+@model Product
 
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
 <div>
-      
+
+    <div asp-validation-summary="All"></div>
+
+    <div>
+        <form asp-action="NewProduct" method="post">
+
+            <div class="form-group">
+                <label asp-for="Name">Voer de naam in:</label>
+                <input class="form-control" asp-for="Name"/>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PictureUrl">Voer de link naar het plaatje:</label>
+                <input class="form-control" asp-for="PictureUrl"/>
+                <span asp-validation-for="PictureUrl" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Price">Voer de prijs in:</label>
+                <input class="form-control" asp-for="Price"/>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row">
+                <button class="btn btn-primary col-sm-4 text-center">Add product</button>
+            </div>
+
+        </form>
+    </div>
 </div>
-</body>
-</html>

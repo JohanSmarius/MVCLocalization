@@ -1,8 +1,14 @@
-@model TModel
+@model Product
 
-@{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
-}
+<h2>Product information</h2>
 
-<h2>title</h2>
+<div class="card" style="width: 18rem;">
+    <img src="@Model.PictureUrl" class="card-img-top" alt="Picture of product">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">
+           @Model.Price.ToString("c")
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
