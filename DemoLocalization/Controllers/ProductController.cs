@@ -11,6 +11,7 @@ public class ProductController : Controller
     // GET
     public IActionResult Index()
     {
+        // Force the culture to Dutch. This can be set for the entire app in the web.comfig.
         Thread.CurrentThread.CurrentCulture = new CultureInfo("nl-NL");
 
         Product product;
