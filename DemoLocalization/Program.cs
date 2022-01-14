@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Localization;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,6 +22,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+// The localization can also be set as middleware. In this example I force the default culture to Dutch.
+app.UseRequestLocalization(options => options.DefaultRequestCulture = new RequestCulture("nl-NL"));
 
 app.MapControllerRoute(
     name: "default",
